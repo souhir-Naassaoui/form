@@ -1,0 +1,53 @@
+<br>
+<div class="container" *ngIf="employeeFormGroup">
+
+  <form [formGroup]="employeeFormGroup">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <mat-form-field>
+            <input matInput placeholder="Firstname" formControlName="firstname"
+                 [ngClass]="{'is-invalid': submitted && employeeFormGroup.controls.firstname.errors}">
+            <div *ngIf=" submitted && employeeFormGroup.controls.firstname.errors" class="invalid-feedback">
+              <div *ngIf="employeeFormGroup.controls.firstname.errors.required">Firstname is required</div>
+            </div>
+          </mat-form-field>
+
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <mat-form-field>
+            <input matInput placeholder="Lastname" formControlName="lastname"
+                   [ngClass]="{'is-invalid': submitted && employeeFormGroup.controls.lastname.errors}">
+            <div *ngIf=" submitted && employeeFormGroup.controls.lastname.errors" class="invalid-feedback">
+              <div *ngIf="employeeFormGroup.controls.lastname.errors.required">Lastname is required</div>
+            </div>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <mat-form-field>
+            <input matInput placeholder="Age" formControlName="age"
+                   [ngClass]="{'is-invalid': submitted && employeeFormGroup.controls.age.errors}">
+            <div *ngIf=" submitted && employeeFormGroup.controls.age.errors" class="invalid-feedback">
+              <div *ngIf="employeeFormGroup.controls.age.errors.required">Age is required</div>
+            </div>
+          </mat-form-field>
+          <!--<div *ngIf="message">
+            <div>{{message}}</div>
+          </div>-->
+        </div>
+      </div>
+  </div>
+    <app-child-form formControlName="basicInfo"></app-child-form>
+
+  </form>
+  <br>
+
+  <br>
+  <app-affichage (eventEmitter)="onActionEvent($event)" [infosInput]="employeeFormGroup" [display]="display"></app-affichage>
+  <br>
+  <app-child-button></app-child-button>
+</div>

@@ -1,0 +1,13 @@
+<button class="btn btn-danger btn-sm m-lg-2" (click)="onAddAge()">Add age</button>
+<button class="btn btn-danger btn-sm m-lg-2" (click)="onAfficher()">Afficher</button>
+<button class="btn btn-danger btn-sm m-lg-2" (click)="onCheck()">Check age</button>
+<br>
+
+<div class="container" *ngIf="display">
+  <p><b>Firstname : </b><em>{{infosInput.value.firstname}}</em></p>
+  <p><b>Lastname : </b><em>{{infosInput.value.lastname}}</em></p>
+  <p><b>Age : </b><em>{{infosInput.value.age}}</em></p>
+  <p><b>Salaire : </b><em>{{infosInput.value.basicInfo.salaire}}</em></p>
+  <p><b>Email : </b><em>{{infosInput.value.basicInfo.email}}</em></p>
+</div>
+

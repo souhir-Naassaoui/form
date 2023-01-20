@@ -1,0 +1,10 @@
+<div>
+  <h4>Hello {{form.value.name}}</h4>
+  <form [formGroup]="form" (ngSubmit)="sayHello()">
+    <input formControlName="name"><br>
+    <input formControlName="email"><br>
+    <app-test-child formControlName="username"></app-test-child>
+    <button type="submit">Register</button>
+  </form>
+  {{form.value | json }}
+</div>

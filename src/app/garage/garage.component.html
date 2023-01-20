@@ -1,0 +1,8 @@
+<div class="container">
+  <form [formGroup]="nestedForm" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="firstname">
+    <app-child-form formControlName="basicInfo"></app-child-form>
+  </form>
+</div>
+
+<pre>{{ this.nestedForm.value | json }}</pre>
