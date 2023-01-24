@@ -1,8 +1,8 @@
-<button class="btn btn-danger btn-sm m-lg-2" (click)="onAddAge()">Add age</button>
-<button class="btn btn-danger btn-sm m-lg-2" (click)="onAfficher()">Afficher</button>
-<button class="btn btn-danger btn-sm m-lg-2" (click)="onCheck()">Check age</button>
-<br>
 
+<button mat-stroked-button class="m-lg-2" color="primary" (click)="onAddAge()">Add age</button>
+<button mat-stroked-button class="m-lg-2" color="primary" (click)="onAfficher()">Afficher</button>
+<button mat-stroked-button class="m-lg-2" color="primary" (click)="onCheck()">Check age</button>
+<br>
 <div class="container" *ngIf="display">
   <p><b>Firstname : </b><em>{{infosInput.value.firstname}}</em></p>
   <p><b>Lastname : </b><em>{{infosInput.value.lastname}}</em></p>

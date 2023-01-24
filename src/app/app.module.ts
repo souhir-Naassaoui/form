@@ -18,6 +18,9 @@ import { ChildButtonComponent } from './child-button/child-button.component';
 import { TestComponent } from './test/test.component';
 import { TestChildComponent } from './test-child/test-child.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatButtonModule} from '@angular/material/button';
+import {ToastrModule} from 'ngx-toastr';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatFormFieldModule, MatSelectModule, MatSnackBarModule
+    MatFormFieldModule, MatSelectModule, MatSnackBarModule, MatButtonModule, ToastrModule.forRoot(),
+    MatCardModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

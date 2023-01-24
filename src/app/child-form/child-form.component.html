@@ -2,15 +2,22 @@
   <div class="col-md-4">
     <div class="form-group">
       <mat-form-field>
-        <input matInput placeholder="Salaire" formControlName="salaire">
+        <input matInput placeholder="Salaire" formControlName="salaire"
+               [ngClass]="{'is-invalid': submitted && basicInfoForm.controls.salaire.errors}">
+        <div *ngIf=" submitted && basicInfoForm.controls.salaire.errors" class="invalid-feedback">
+          <div *ngIf="basicInfoForm.controls.salaire.errors.required">Salaire is required</div>
+        </div>
       </mat-form-field>
     </div>
   </div>
   <div class="col-md-4">
     <div class="form-group">
       <mat-form-field>
-        <input matInput placeholder="Email" formControlName="email">
-
+        <input matInput placeholder="Email" formControlName="email"
+               [ngClass]="{'is-invalid': submitted && basicInfoForm.controls.email.errors}">
+        <div *ngIf=" submitted && basicInfoForm.controls.email.errors" class="invalid-feedback">
+          <div *ngIf="basicInfoForm.controls.email.errors.required">Email is required</div>
+        </div>
       </mat-form-field>
     </div>
   </div>
